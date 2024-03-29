@@ -5,6 +5,7 @@ import { PropsWithChildren } from "react";
 
 export default async function PublicLayout({ children }: PropsWithChildren) {
   const session = await getUser();
+  console.log("🚀 ~ PublicLayout ~ session:", session);
   if (session?.user) redirect("/chat");
   return (
     <div>
