@@ -3,9 +3,9 @@ import { getUser } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { PropsWithChildren } from "react";
 
-export default async function PrivateLayout({ children }: PropsWithChildren) {
+export default async function PrivateLayout({ children }: any) {
   const session = await getUser();
-  if (!session?.user) redirect("/login");
+  // if (!session?.user) redirect("/login");
   return (
     <div>
       <Navbar />
